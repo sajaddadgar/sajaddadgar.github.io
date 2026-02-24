@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <defs>
+    <!-- Dark base gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0d1b2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#071014;stop-opacity:1" />
+    </linearGradient>
+    <!-- Green glow -->
+    <radialGradient id="glow1" cx="30%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#00ff8820;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff8800;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="75%" cy="40%" r="35%">
+      <stop offset="0%" style="stop-color:#0088ff15;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088ff00;stop-opacity:1" />
+    </radialGradient>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00ff8808" stroke-width="0.5"/>
+    </pattern>
+    <!-- Hex pattern -->
+    <pattern id="hexPattern" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+      <polygon points="30,2 58,17 58,35 30,50 2,35 2,17" fill="none" stroke="#00ff8810" stroke-width="0.8"/>
+    </pattern>
+    <!-- Clip paths -->
+    <clipPath id="bannerClip">
+      <rect width="1200" height="400" rx="12"/>
+    </clipPath>
+    <!-- Shield filter glow -->
+    <filter id="shieldGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#bannerClip)">
+    <!-- Base background -->
+    <rect width="1200" height="400" fill="url(#bgGrad)"/>
+
+    <!-- Grid overlay -->
+    <rect width="1200" height="400" fill="url(#grid)" opacity="0.6"/>
+
+    <!-- Hexagon pattern overlay -->
+    <rect width="1200" height="400" fill="url(#hexPattern)" opacity="0.5"/>
+
+    <!-- Glow blobs -->
+    <rect width="1200" height="400" fill="url(#glow1)"/>
+    <rect width="1200" height="400" fill="url(#glow2)"/>
+
+    <!-- Scan line effect -->
+    <rect x="0" y="0" width="1200" height="1" fill="#00ff88" opacity="0.08"/>
+    <rect x="0" y="80" width="1200" height="1" fill="#00ff88" opacity="0.04"/>
+    <rect x="0" y="160" width="1200" height="1" fill="#00ff88" opacity="0.04"/>
+    <rect x="0" y="240" width="1200" height="1" fill="#00ff88" opacity="0.04"/>
+    <rect x="0" y="320" width="1200" height="1" fill="#00ff88" opacity="0.04"/>
+
+    <!-- Diagonal accent lines -->
+    <line x1="-50" y1="420" x2="350" y2="-20" stroke="#00ff8815" stroke-width="60"/>
+    <line x1="900" y1="420" x2="1300" y2="-20" stroke="#0088ff10" stroke-width="80"/>
+
+    <!-- Circuit-like decorative paths left side -->
+    <g stroke="#00ff88" stroke-width="1" fill="none" opacity="0.25">
+      <polyline points="20,80 80,80 80,120 140,120"/>
+      <polyline points="20,150 60,150 60,200 110,200 110,230"/>
+      <polyline points="20,300 90,300 90,270 150,270"/>
+      <circle cx="80" cy="80" r="3" fill="#00ff88"/>
+      <circle cx="140" cy="120" r="3" fill="#00ff88"/>
+      <circle cx="60" cy="200" r="3" fill="#00ff88"/>
+      <circle cx="110" cy="230" r="3" fill="#00ff88"/>
+      <circle cx="90" cy="270" r="3" fill="#00ff88"/>
+    </g>
+
+    <!-- Circuit-like decorative paths right side -->
+    <g stroke="#00aaff" stroke-width="1" fill="none" opacity="0.2">
+      <polyline points="1180,100 1120,100 1120,140 1060,140"/>
+      <polyline points="1180,200 1140,200 1140,160 1080,160 1080,130"/>
+      <polyline points="1180,310 1100,310 1100,280 1040,280"/>
+      <circle cx="1120" cy="100" r="3" fill="#00aaff"/>
+      <circle cx="1060" cy="140" r="3" fill="#00aaff"/>
+      <circle cx="1140" cy="160" r="3" fill="#00aaff"/>
+      <circle cx="1100" cy="280" r="3" fill="#00aaff"/>
+    </g>
+
+    <!-- Central Shield -->
+    <g transform="translate(600,200)" filter="url(#shieldGlow)">
+      <!-- Shield outer glow ring -->
+      <ellipse cx="0" cy="0" rx="110" ry="115" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.2"/>
+      <ellipse cx="0" cy="0" rx="95" ry="100" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
+
+      <!-- Shield shape -->
+      <path d="M0,-90 L70,-60 L70,10 Q70,80 0,110 Q-70,80 -70,10 L-70,-60 Z"
+            fill="#00ff8808" stroke="#00ff88" stroke-width="1.5" opacity="0.9"/>
+
+      <!-- Shield inner lines -->
+      <path d="M0,-70 L52,-46 L52,12 Q52,62 0,86 Q-52,62 -52,12 L-52,-46 Z"
+            fill="none" stroke="#00ff8840" stroke-width="0.8"/>
+
+      <!-- Lock icon inside shield -->
+      <rect x="-18" y="-8" width="36" height="28" rx="3" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.9"/>
+      <path d="M-10,-8 L-10,-20 Q-10,-36 0,-36 Q10,-36 10,-20 L10,-8" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.9"/>
+      <circle cx="0" cy="8" r="5" fill="#00ff88" opacity="0.9"/>
+      <rect x="-1.5" y="8" width="3" height="8" fill="#00ff88" opacity="0.9"/>
+    </g>
+
+    <!-- Android robot head (stylized, right of shield) -->
+    <g transform="translate(800, 185)" opacity="0.18" stroke="#00ff88" stroke-width="1.2" fill="none">
+      <!-- Antennas -->
+      <line x1="-20" y1="-45" x2="-30" y2="-65"/>
+      <circle cx="-30" cy="-68" r="3" fill="#00ff88"/>
+      <line x1="20" y1="-45" x2="30" y2="-65"/>
+      <circle cx="30" cy="-68" r="3" fill="#00ff88"/>
+      <!-- Head -->
+      <rect x="-40" y="-45" width="80" height="60" rx="20" fill="#00ff8808"/>
+      <!-- Eyes -->
+      <circle cx="-15" cy="-18" r="6" fill="#00ff8830" stroke="#00ff88"/>
+      <circle cx="15" cy="-18" r="6" fill="#00ff8830" stroke="#00ff88"/>
+      <!-- Body -->
+      <rect x="-45" y="20" width="90" height="55" rx="5" fill="#00ff8805"/>
+      <!-- Arms -->
+      <rect x="-65" y="22" width="16" height="45" rx="8" fill="#00ff8805"/>
+      <rect x="49" y="22" width="16" height="45" rx="8" fill="#00ff8805"/>
+      <!-- Legs -->
+      <rect x="-35" y="78" width="22" height="30" rx="8" fill="#00ff8805"/>
+      <rect x="13" y="78" width="22" height="30" rx="8" fill="#00ff8805"/>
+    </g>
+
+    <!-- Binary/hex code rain (decorative) -->
+    <g font-family="'Courier New', monospace" font-size="10" fill="#00ff88" opacity="0.12">
+      <text x="200" y="30">01001101 10110010</text>
+      <text x="200" y="380">11001010 01110101</text>
+      <text x="950" y="30">SELinux MAC RBAC</text>
+      <text x="950" y="380">allow deny audit</text>
+    </g>
+
+    <!-- Policy rule lines (decorative, left area) -->
+    <g font-family="'Courier New', monospace" font-size="9.5" fill="#00ff88" opacity="0.22">
+      <text x="220" y="130">allow system_app</text>
+      <text x="220" y="146">    system_data_file</text>
+      <text x="220" y="162">    : file { read write };</text>
+      <text x="220" y="190">neverallow untrusted</text>
+      <text x="220" y="206">    kernel:process *;</text>
+    </g>
+
+    <!-- Right side labels -->
+    <g font-family="'Courier New', monospace" font-size="9.5" fill="#0099ff" opacity="0.22">
+      <text x="870" y="270">type=AVC msg=audit</text>
+      <text x="870" y="286">avc: denied { open }</text>
+      <text x="870" y="302">scontext=u:r:init</text>
+      <text x="870" y="318">tcontext=u:object_r</text>
+    </g>
+
+    <!-- Main title -->
+    <text x="600" y="340" text-anchor="middle"
+          font-family="'Courier New', monospace" font-size="13" letter-spacing="6"
+          fill="#00ff88" opacity="0.55" filter="url(#textGlow)">
+      MANDATORY ACCESS CONTROL · TYPE ENFORCEMENT
+    </text>
+
+    <!-- Main heading -->
+    <text x="600" y="280" text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="48" font-weight="bold" letter-spacing="4"
+          fill="#e8fff0" filter="url(#textGlow)" opacity="0.95">
+      SEAndroid Policy
+    </text>
+
+    <!-- Subtitle -->
+    <text x="600" y="308" text-anchor="middle"
+          font-family="'Courier New', monospace"
+          font-size="14" letter-spacing="3"
+          fill="#00ff88" opacity="0.7">
+      Security-Enhanced Android · Kernel-Level Protection
+    </text>
+
+    <!-- Top border accent -->
+    <rect x="0" y="0" width="1200" height="3" fill="url(#bgGrad)"/>
+    <rect x="0" y="0" width="1200" height="2">
+      <linearGradient id="topLine" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#00ff8800"/>
+        <stop offset="30%" stop-color="#00ff88"/>
+        <stop offset="70%" stop-color="#00ff88"/>
+        <stop offset="100%" stop-color="#00ff8800"/>
+      </linearGradient>
+      <rect fill="url(#topLine)"/>
+    </rect>
+
+    <!-- Inline gradient rect for top line -->
+    <defs>
+      <linearGradient id="topLineGrad" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#00ff8800"/>
+        <stop offset="30%" stop-color="#00ff88cc"/>
+        <stop offset="70%" stop-color="#00ff88cc"/>
+        <stop offset="100%" stop-color="#00ff8800"/>
+      </linearGradient>
+      <linearGradient id="bottomLineGrad" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#0088ff00"/>
+        <stop offset="30%" stop-color="#0088ff99"/>
+        <stop offset="70%" stop-color="#0088ff99"/>
+        <stop offset="100%" stop-color="#0088ff00"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="1200" height="2" fill="url(#topLineGrad)"/>
+    <rect x="0" y="398" width="1200" height="2" fill="url(#bottomLineGrad)"/>
+
+    <!-- Corner brackets -->
+    <g stroke="#00ff88" stroke-width="1.5" fill="none" opacity="0.5">
+      <polyline points="20,40 20,20 40,20"/>
+      <polyline points="1160,20 1180,20 1180,40"/>
+      <polyline points="20,360 20,380 40,380"/>
+      <polyline points="1160,380 1180,380 1180,360"/>
+    </g>
+
+    <!-- Version/status tags -->
+    <g font-family="'Courier New', monospace" font-size="10" fill="#00ff88" opacity="0.4">
+      <text x="25" y="362">v2.0 · AOSP</text>
+      <text x="1060" y="362">ENFORCING MODE ✓</text>
+    </g>
+  </g>
+</svg>
