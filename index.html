@@ -52,23 +52,19 @@ animation: slide 8s steps(4) infinite;
 
 .dynamic-txt li span{
   position: relative;
-}
-
-.dynamic-txt li span::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #e9e9e9;
-  border-left: 2px solid black;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: content-box;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid black;
   animation: typing 2s steps(16) infinite;
 }
 
 @keyframes typing {
 100%{
-  left: 100%;
-  margin: 0 -13px 0 13px;
+  max-width: 100%;
 }
 }
 
@@ -136,7 +132,7 @@ animation: slide 8s steps(4) infinite;
             <ul class="dynamic-txt">			
               <li><span>Data Science</span></li>
               <li><span>Machine Learning</span></li>
-              <li><span>Deep Learning</span></li>
+              <li><span>Software Engineering</span></li>
 			        <li><span>Artificial Intelligence</span></li>
               <li><span>Cloud Data Analtic</span></li>
             </ul>
